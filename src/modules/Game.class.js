@@ -48,7 +48,7 @@ class Game {
     let boardChanged = false;
 
     for (let i = 0; i < 4; i++) {
-      const origRow = this.board[i];
+      const origRow = [...this.board[i]];
       const newRow = this.MergeOrigRow(origRow);
 
       if (!this.ArraysEqual(origRow, newRow)) {
@@ -227,10 +227,10 @@ class Game {
   }
 
   MergeOrigRow(row) {
-    const newRow = row.filter((n) => n !== 0);
+    const newRow = [...row];
 
     for (let i = 0; i < newRow.length - 1; i++) {
-      if (newRow[i] === newRow[i + 1]) {
+      if (newRow[i] === newRow[i + 1] && newRow[i] !== 0) {
         newRow[i] *= 2;
         this.score += newRow[i];
         newRow[i + 1] = 0;

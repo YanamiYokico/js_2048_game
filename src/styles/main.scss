@@ -18,11 +18,18 @@ body {
   color: #776e65;
   box-sizing: border-box;
   text-align: center;
-  line-height: 75px;
+  line-height: 72px;
   font-size: 24px;
   font-weight: bold;
   user-select: none;
-  transition: transform 0.2s ease-in-out;
+  transition:
+    transform 0.2s ease-in-out,
+    background 0.2s ease-in-out;
+
+  &--0 {
+    background: #d6cdc4;
+    color: transparent;
+  }
 
   &--2 {
     background: #eee4da;

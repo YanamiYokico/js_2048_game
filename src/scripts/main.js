@@ -22,7 +22,7 @@ function renderBoard() {
     const value = board[row][col];
 
     cell.textContent = value === 0 ? '' : value;
-    cell.className = `field-cell ${value ? `field-cell--${value}` : ''}`;
+    cell.className = `field-cell field-cell--${value}`;
   });
 
   scoreElement.textContent = game.getScore();
